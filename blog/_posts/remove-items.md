@@ -20,25 +20,25 @@ Consider the number of elements in `nums` which are not equal to `val` be `k`, t
 
 What they are asking for here is the following:
 
-1. Return the count of items that do not equal val.
-2. Place the items that do not equal val to the beginning of the array.
-3. Don't be concerend about what the val items look like.
+1. Return the `count` of `items` that do not equal `val`.
+2. Place the `items` that do not equal `val` to the **beginning** of the array.
+3. Don't be concerend about what the `val` items look like.
 
 Do not:
 
-1. Create a new array and do funky manipulation. This is a test to get you to solve the problem inline with a big O of O(1) in space. Which means no new variables that could hold x items.
+1. Create a new array and do funky manipulation. This is a test to get you to solve the problem inline with a big O of `O(1)` in space. Which means no new variables that could hold `x` items.
 
 ### Approaching the problem
 
 We will want to create a function that has the following:
 
-1. A value to hold k which we need to return at the end, but will also act as our pointer to move items to.
-2. A for loop to iterate the array.
-3. An if statement to check if the item is not equal to val.
-   1. A reassignment of the item to position k and increment k.
-4. return k.
+1. A value to hold `k` which we need to return at the end, but will also act as our pointer to move items to.
+2. A for loop to iterate the `array`.
+3. An if statement to check if the item is not equal to `val`.
+   1. A reassignment of the item to position `k` and increment `k`.
+4. return `k`.
 
-Remember, they are looking to inline array manipulation and the result of how many vals don't equal val.
+Remember, they are looking to inline array manipulation and the result of how many vals don't equal `val`.
 
 ### Examples:
 
