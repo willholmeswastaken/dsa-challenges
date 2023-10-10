@@ -71,6 +71,48 @@ Create a map which holds our key value pairs. Each value should consist of the n
 - At t=200, get(1) is called but the cache is empty so -1 is returned.
 - At t=250, count() returns 0 because the cache is empty.
 
+### Code
+
+```ts
+class TimeLimitedCache {
+  private cache: Map<
+    number,
+    { value: number; timeoutId: ReturnType<typeof setTimeout> }
+  >;
+  constructor() {
+    this.cache = new Map<
+      number,
+      { value: number; timeoutId: ReturnType<typeof setTimeout> }
+    >();
+  }
+
+  set(key: number, value: number, duration: number): boolean {
+    const hasEntry = this.cache.has(key);
+    if (hasEntry) {
+      clearTimeout(this.cache.get(key).timeoutId);
+    }
+    const timeoutId = setTimeout(() => this.cache.delete(key), duration);
+    this.cache.set(key, { value, timeoutId });
+    return hasEntry;
+  }
+
+  get(key: number): number {
+    return this.cache.has(key) ? this.cache.get(key).value : -1;
+  }
+
+  count(): number {
+    return this.cache.size;
+  }
+}
+
+/**
+ * const timeLimitedCache = new TimeLimitedCache()
+ * timeLimitedCache.set(1, 42, 1000); // false
+ * timeLimitedCache.get(1) // 42
+ * timeLimitedCache.count() // 1
+ */
+```
+
 ## Key Takeaways
 
 1. A `Map` has a property on it called .size which is like array.length.
