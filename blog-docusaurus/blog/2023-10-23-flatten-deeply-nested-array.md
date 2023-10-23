@@ -36,7 +36,7 @@ const flat = (arr: MultiDimensionalArray, n: number) => {
   for (const item of arr) {
     // If it's an array, we want to recursively call flat but
     // updating n to reflect our depth relative position.
-    if (Array.isArray(a)) {
+    if (Array.isArray(item)) {
       res.push(...flat(item, n - 1));
     } else {
       // if its not an array we just want to add the number to the resulting array.
