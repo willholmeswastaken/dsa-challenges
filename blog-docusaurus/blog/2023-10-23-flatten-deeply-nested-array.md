@@ -54,7 +54,7 @@ The approach:
 1. Add our n = 0 case to just return arr;
 2. Loop through the current array.
    1. When we find an item that is a number, push that number to our resulting array.
-   2. When we find an array, recursively call flat and spread the results into our resulting array.
+   2. When we find an array, recursively call flat and spread the results into our resulting array. It wont affect nested arrays if we build up any during our recursive calls that exceed the n depth. This is because the spread operator is just spreading the parts which aren't out of our n bounds.
 3. Return the resulting array.
 
 ## Key takeaways
