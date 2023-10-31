@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Wills DSA Blog",
+  title: "Wills Dev Blog",
   tagline: "Learning every day.",
   favicon: "img/favicon.ico",
 
@@ -37,15 +37,12 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        },
+        docs: false,
         blog: {
+          routeBasePath: "/",
           showReadingTime: true,
+          blogSidebarTitle: "All posts",
+          blogSidebarCount: "ALL",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -64,16 +61,20 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "Wills DSA Blog",
+        title: "Wills Dev Blog",
         logo: {
           alt: "My Site Logo",
           src: "img/logo.svg",
         },
         items: [
-          { to: "/blog", label: "Blog", position: "left" },
           {
             href: "https://github.com/willholmeswastaken",
             label: "GitHub",
+            position: "right",
+          },
+          {
+            href: "https://willholmes.dev",
+            label: "Website",
             position: "right",
           },
         ],
