@@ -17,8 +17,6 @@ Essentially when `state.value` changes we need to update the value of `element.v
 
 This includes adding an event listener to the element and also to the state value property.
 
-### Approaching the problem
-
 ### Examples:
 
 ```ts
